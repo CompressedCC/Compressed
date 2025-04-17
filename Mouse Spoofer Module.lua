@@ -51,7 +51,7 @@ end
 
 
 local Hook
-Hook = hookmetamethod(game, "__namecall", function(self, ...)
+Hook = hookmetamethod(game, "__namecall", LPH_NO_VIRTUALIZE(function(self, ...)
     local Args = {...}
     local Method = getnamecallmethod()
 
@@ -61,4 +61,4 @@ Hook = hookmetamethod(game, "__namecall", function(self, ...)
     end
 
     return Hook(self, ...)
-end)
+end))
